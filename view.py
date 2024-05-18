@@ -199,7 +199,42 @@ class Paziente(tk.Toplevel, Window):
         super().__init__(master)
         self.controller = controller
 
-        
+        X=800; Y=650
+
+        # SET WINDOW DEFAULT SETTINGS #########################################
+        set_window_default_settings(self, "Paziente", X, Y) # 800x650 Paziente Window
+        self.resizable(False, False)
+        #######################################################################
+
+        # Imposta lo stile ####################################################
+        self.ttkstyle = ttk.Style() # create style object
+        self.ttkstyle.theme_use('clam') # set style
+
+        # styles ################################
+        self.ttkstyle.configure("main.TFrame", background ="#b3ecff")
+        self.ttkstyle.configure("menu.TFrame", background ="#ffffb3")
+        #########################################
+
+        # layouts ###############################
+        self.Xmain_layout = { "width":X, "height":Y }
+        self.Xmenu_layout = { "width":X*0.7, "height":Y*0.7 } # 70% of width and height
+        #########################################
+
+        #######################################################################
+        self.Xmain = ttk.Frame(self, style="main.TFrame", **self.Xmain_layout) # Main Frame
+        self.Xmain.place(relx=0.5, rely=0.5, anchor="center")
+
+        self.Xmenu = ttk.Frame(self.Xmain, style="menu.TFrame", **self.Xmenu_layout) # Menu Frame
+        self.Xmenu.place(relx=0.5, rely=0.5, anchor="center")
+
+        self.grid_rowconfigure(0, weight=1)
+        self.grid_columnconfigure(0, weight=1)
+
+        self.XTitle = self.Xlabel("MODULO PRENOTAZIONE",0,0)
+
+
+
+        self.mainloop()
 
 class Medico(tk.Toplevel, Window):
     def __init__(self, master=None, controller=None):

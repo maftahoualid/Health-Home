@@ -2,10 +2,10 @@ import tkinter as tk
 from tkinter import ttk
 
 # Configurazione finestra
-min_width = 425     # larghezza minima
-min_height = 200    # altezza minima
-max_width = 700     # larghezza massima
-max_height = 500    # altezza massima 
+#min_width = 425     # larghezza minima
+#min_height = 200    # altezza minima
+#max_width = 700     # larghezza massima
+#max_height = 500    # altezza massima 
 
 ## LOGGER COLORS
 RED = '\033[31m'
@@ -35,7 +35,7 @@ def set_window_default_settings(app:tk.Tk, title:str="Titolo", window_width:int=
     center_x, center_y = get_center_coordinates(screen_width, screen_height, window_width, window_height)
     app.geometry(f'{window_width}x{window_height}+{center_x}+{center_y}') # Imposto dimensione e posizione della finestra
     app.resizable(True, True) # Si può allargare in larghezza e altezza
-    app.minsize(min_width, min_height) # Ha una larghezza minima e massima
-    app.maxsize(max_width, max_height) # Ha una altezza minima e massima
+    #app.minsize(min_width, min_height) # Ha una larghezza minima e massima
+    #app.maxsize(max_width, max_height) # Ha una altezza minima e massima
     app.attributes('-topmost', 1) # È posizionata sopra tutte le altre finestre
     app.title(f"{title}") # Imposto il titolo
