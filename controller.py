@@ -33,7 +33,7 @@ class Controller:
             for r in data:
                 if ( r[1]==email and r[2]==password ) :
                     print("Logged as Medico")
-                    self.paziente = Medico(self.view,self) # create Medico page
+                    self.medico = Medico(self.view,self) # create Medico page
                     self.view.destroy_login() # destroy login page
                     logged=True; break
 
@@ -42,7 +42,7 @@ class Controller:
             for r in data:
                 if ( r[1]==email and r[2]==password ) :
                     print("Logged as Infermiere")
-                    self.paziente = Infermiere(self.view,self) # create Infermiere page
+                    self.infermiere = Infermiere(self.view,self) # create Infermiere page
                     self.view.destroy_login() # destroy login page
                     logged=True; break
             
